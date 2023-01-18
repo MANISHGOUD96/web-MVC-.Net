@@ -1,0 +1,55 @@
+﻿@model List<ProjectRevision1.Models.EmpModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<h1><u><b>Employee Details:-</b></u></h1>
+<style>
+    body {
+        background-image: url('../../Image/image7.jpg');
+        background-size: 1500px 1px;
+    }
+
+    .mkg {
+        border: 2px solid black;
+    }
+</style>
+
+<table class="table body table-bordered table-hover table-responsive bg-success mkg">
+    <tr class="bg-info ">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Adress</th>
+        <th>Company</th>
+        <th>Selary</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Addhar</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="mkg">
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Age</td>
+            <td>@item.Adress</td>
+            <td>@item.Company</td>
+            <td>@item.Salary</td>
+            <td>@item.Email</td>
+            <td>@item.Phone</td>
+            <td>@item.Addhar</td>
+            <td><a class="btn btn-primary" href="@Url.Action("Edit","Home",new {item.Id})">Edit</a></td>
+            <td><a class="btn btn-danger" href="@Url.Action("Delete","Home",new{item.Id})">Delete</a></td>
+        </tr>
+    }
+
+</table>
+
+<center>
+    <a class="btn btn-warning" href="Emp" role="button">Add New Employee</a>
+    <a class="btn btn-primary" href="About" role="button">Next Page</a>
+</center>

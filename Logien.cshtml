@@ -1,0 +1,46 @@
+﻿@model ProjectRevision1.Models.LogienModel
+@{
+    ViewBag.Title = "Logien";
+}
+
+<h1 class="text-center"><b><u>Login Page</u></b></h1>
+<style>
+    .error {
+        color: #ff0000;
+    }
+
+    body {
+        background-image: url('../../Image/image7.jpg');
+        background-size: 1500px 1px;
+    }
+
+    .mkg {
+        border: 2px solid black;
+        width: 25%;
+    }
+</style>
+<div class=" mkg center-block">
+    @using (Html.BeginForm("Logien", "Home", FormMethod.Post))
+    {
+
+        <div class="form-group">
+            <h4><label>Enter Your Email</label></h4>
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "error" })
+            <p class="error">@TempData["Invalid"]</p>
+        </div>
+
+        <div class="form-group">
+            <h4><label>Enter Password</label></h4>
+            @Html.PasswordFor(m => m.password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.password, "", new { @class = "error" })
+            <p class="error">@TempData["InvalidPassword"]</p>
+
+        </div>
+        <center>
+            <button class="btn btn-danger" type="reset">Reset</button>
+            <button class="btn btn-success" type="submit">Submit</button>
+        </center>
+    }
+</div>
+

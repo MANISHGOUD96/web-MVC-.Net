@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+<style>
+    body {
+        background-image: url('../../Image/image8.jpg');
+       background-size:1500px 1300px;
+    }
+</style>
+
+<center>
+    <h2>@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+
+    <address>
+        Kushinagar<br />
+        Uttar Pradesh, PinNo-274149<br /> 
+    </address>
+
+    <h3><strong>Support:</strong>   <a href="mailto:Support@example.com"> @Session["UserEmail"]</a><br /></h3>
+        
+    <a class="btn btn-info" href="About" role="button">Back Page</a>
+    <a class="btn btn-primary" href="Emp" role="button">Next Page</a>
+</center>

@@ -1,0 +1,85 @@
+﻿@model ProjectRevision1.Models.EmpModel
+
+
+@{
+    ViewBag.Title = "Emp";
+}
+
+<h1 class="text-center"><b><u>Fill Employee Details</u></b></h1>
+
+<style>
+    .error {
+        color: #ff0000;
+    }
+
+    body {
+        background-image: url('../../Image/image0.jpg');
+    }
+    .mkg {
+        border: 2px solid black;
+        width: 25%;
+        background-image: url('../../Image/image2.jpeg');
+        background-size:500px 1px;
+    }
+</style>
+
+<div class="mkg center-block">
+    @using (Html.BeginForm("Emp", "Home", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.Id)
+
+        <div class="form-group">
+            <h4><label> Name</label></h4>
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Name, "", new { @class = "error" })
+        </div>
+
+        <div class="form-group">
+            <h4><label>Age</label></h4>
+            @Html.TextBoxFor(m => m.Age, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Age, "", new { @class = "error" })
+        </div>
+
+        <div class="form-group">
+            <h4><label>Adress</label></h4>
+            @Html.TextBoxFor(m => m.Adress, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Adress, "", new { @class = "error" })
+        </div>
+
+        <div class="form-group">
+            <h4><label>Company</label></h4>
+            @Html.TextBoxFor(m => m.Company, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <h4><label>Salary</label></h4>
+            @Html.TextBoxFor(m => m.Salary, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <h4><label>Email</label></h4>
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "error" })
+        </div>
+
+        <div class="form-group">
+            <h4><label>Phone</label></h4>
+            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "error" })
+        </div>
+
+        <div class="form-group">
+            <h4><label>Addhar</label></h4>
+            @Html.TextBoxFor(m => m.Addhar, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Addhar, "", new { @class = "error" })
+        </div>
+        <center>
+            <a class="btn btn-info" href="Contact" role="button">Back Page</a>
+            <button class="btn btn-danger" type="reset">Reset</button>
+            <button class="btn btn-success" type="submit">Submit</button>
+        </center>
+
+    }
+
+</div>
+
